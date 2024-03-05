@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row justify-content-center " >
+
+      <div div style="width: 200px; height: auto; border: 1px solid black; border-radius: 15px; box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);">
+        <h1>My ToDo list!</h1>
+        <ol>
+          <% @tasks.each do |task| %>
+            <li>
+            <input type="checkbox"<% if task[:completed] %> checked <% end %>> <%= link_to "#{task.title}", task_path(task) %>.
+            </li>
+          <% end %>
+        </ol>
+      </div>
+    </div>
+  <div class='row justify-content-center '>
+    <%= link_to "new task", new_task_path, class: 'btn btn-success', style:"border: 1px solid black; width: auto; border-radius: 15px; box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);"%>
+  </div>
+</div>
